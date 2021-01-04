@@ -1,0 +1,12 @@
+#spring:
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    initialSize: 5
+#    minIdle: 5
+#  thymeleaf:
+#    cache: false
+#    schema:
+#      - classpath:sql/department.sql
+#      - classpath:sql/employee.sql
+#mybatis:
+#  config-location: classpath:mybatis/mybatis-config.xml

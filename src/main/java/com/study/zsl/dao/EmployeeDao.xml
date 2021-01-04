@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.study.zsl.dao.EmployeeDao">
+    <select id="getAll" resultType="com.study.zsl.po.Employee">
+        select * from employee
+    </select>
+
+    <select id="get" resultType="com.study.zsl.po.Employee">
+        select * from employee where id=#{id}
+    </select>
+    <insert id="save">
+        insert into employee (last_name, email, gender, dept_id) values(#{lastName},#{email},#{gender},#{department.id}
+    </insert>
+
+    <delete id="delete">
+        delete from employee where id=#{id}
+    </delete>
+    <select id="getEmpByDid" resultType="com.study.zsl.po.Employee">
+        select * from employee where dept_id=#{department.id}
+    </select>
+    <update id="update">
+        update employee
+        set last_name=#{lastName},
+            email=#{email},
+            gender=#{gender},
+            dept_id=#{deptId}
+        where id = #{id}
+    </update>
+
+<!------------------->
+    <select id="getByName" resultType="com.study.zsl.po.Employee">
+        select * from employee where last_name like '%${name}%'
+    </select>
+</mapper>
